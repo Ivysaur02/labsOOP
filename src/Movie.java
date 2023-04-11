@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Movie implements MediaItem {
     private String[] actors;
@@ -65,10 +66,27 @@ public class Movie implements MediaItem {
 
     @Override
     public String toString() {
-        return "Movie{" +
-                "actors=" + Arrays.toString(actors) +
-                ", title='" + title + " " +
-        ", year=" + year +
-                '}';
+        return "Фильм " + "Актёры " + Arrays.toString(actors) +" "+ title + " год" + year;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Movie movie = (Movie) obj;
+        return year == movie.year &&
+                Arrays.equals(actors, movie.actors) &&
+                Objects.equals(title, movie.title);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(title, year);
+        result = 31 * result + Arrays.hashCode(actors);
+        return result;
     }
 }

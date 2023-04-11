@@ -18,8 +18,8 @@ public class Main {
 
         mediaItems.add(book1);
         mediaItems.add(book2);
-        mediaItems.add((MediaItem) movie1);
-        mediaItems.add((MediaItem) movie2);
+        mediaItems.add(movie1);
+        mediaItems.add(movie2);
 
         // Выводим полную информацию обо всех объектах массива
         for (MediaItem item : mediaItems) {
@@ -36,7 +36,12 @@ public class Main {
                 }
             }
         }
-
+        if (!equalItems.isEmpty()) {
+            System.out.println("Повторяются:");
+            for (MediaItem item : equalItems)
+                System.out.println(item);
+        }
+        // в данном примере нет похожих но написать вы можете
 
         // Разбиваем исходный массив на два массива с однотипными элементами
         List<Book> books = new ArrayList<>();

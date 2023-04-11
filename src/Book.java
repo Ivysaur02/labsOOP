@@ -65,11 +65,7 @@ public class Book implements MediaItem {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "authors=" + Arrays.toString(authors) +
-                ", title='" + title + '\'' +
-                ", year=" + year +
-                '}';
+        return "Книга" + " Автор(ы) " + Arrays.toString(authors)+ " " + title + " год " + year;
     }
 
     @Override
