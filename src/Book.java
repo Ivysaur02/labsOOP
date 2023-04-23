@@ -1,3 +1,7 @@
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.Reader;
+import java.io.Writer;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -53,7 +57,7 @@ public class Book implements MediaItem {
     public void setElement(int index, String value) {
         authors[index] = value;
     }
-
+    @Override
     public int countCharsInElements() {
         int count = 0;
         for (String author : authors) {
@@ -61,6 +65,16 @@ public class Book implements MediaItem {
         }
         count += title.length();
         return count;
+    }
+
+    @Override
+    public void output(OutputStream out) throws IOException {
+        out.write(this.toString().getBytes());
+    }
+
+    @Override
+    public void write(Writer out) throws IOException {
+        out.write(this.toString());
     }
 
     @Override
