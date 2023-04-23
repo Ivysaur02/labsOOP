@@ -66,7 +66,7 @@ public class Movie implements MediaItem {
 
     @Override
     public String toString() {
-        return "Фильм " + "Актёры " + Arrays.toString(actors) +" "+ title + " год" + year;
+        return "Фильм " + "Актёры " + Arrays.toString(actors) +" "+ title + " год " + year;
     }
 
     @Override
