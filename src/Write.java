@@ -10,8 +10,12 @@ public class Write {
         Book book1 = new Book(bookAuthors1, "Маленький принц", 1943);
         String[] movieActors1 = {"Мэттью МакКонахи", "Аннатуар Гудман"};
         Movie movie1 = new Movie(movieActors1, "Интерстеллар", 2014);
+
+        String[] movieActors2 = {"Том Хэнкс", "Хелен Хант"};
+        Movie movie2 = new Movie(movieActors2, "Форрест Гамп", 1994);
         mediaItems.add(book1);
         mediaItems.add(movie1);
-        IOTools.output(mediaItems, fos);
+        //IOTools.output(mediaItems,fos);
+        IOTools.output1(movie2, fos);
     }
 }

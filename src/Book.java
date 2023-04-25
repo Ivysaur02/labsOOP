@@ -69,7 +69,8 @@ public class Book implements MediaItem {
 
     @Override
     public void output(OutputStream out) throws IOException {
-        out.write(this.toString().getBytes());
+        //out.write(this.toString().getBytes());
+        IOTools.output(this, out);
     }
 
     @Override
