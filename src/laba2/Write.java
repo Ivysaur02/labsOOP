@@ -1,3 +1,9 @@
+package laba2;
+
+import basa.Book;
+import basa.MediaItem;
+import basa.Movie;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,7 +21,7 @@ public class Write {
         Movie movie2 = new Movie(movieActors2, "Форрест Гамп", 1994);
         mediaItems.add(book1);
         mediaItems.add(movie1);
-        //IOTools.output(mediaItems,fos);
-        IOTools.output1(movie2, fos);
+        //laba2.IOTools.output(mediaItems,fos);
+        IOTools.output(movie2, fos);
     }
 }

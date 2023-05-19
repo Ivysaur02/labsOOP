@@ -1,8 +1,12 @@
+package basa;
+
+import laba2.IOTools;
+
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.Reader;
 import java.io.Writer;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Objects;
 
 public class Book implements MediaItem {
@@ -102,6 +106,30 @@ public class Book implements MediaItem {
         int result = Objects.hash(title, year);
         result = 31 * result + Arrays.hashCode(authors);
         return result;
+    }
+
+    @Override
+    public Iterator<String> iterator() {
+        return new AuthorIterator(authors);
+    }
+
+    private static class AuthorIterator implements Iterator<String> {
+        private int currentIndex = 0;
+        private String[] authors;
+
+        public AuthorIterator(String[] authors) {
+            this.authors = authors;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < authors.length;
+        }
+
+        @Override
+        public String next() {
+            return authors[currentIndex++];
+        }
     }
 
 }

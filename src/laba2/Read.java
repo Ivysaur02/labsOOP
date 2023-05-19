@@ -1,8 +1,11 @@
+package laba2;
+
+import basa.MediaItem;
+
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class Read {
     public static void readItem() throws IOException, ClassNotFoundException {

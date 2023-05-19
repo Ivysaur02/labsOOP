@@ -1,5 +1,12 @@
+package laba1;
+
+import basa.Book;
+import basa.MediaItem;
+import basa.Movie;
+
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class TestLab4 {
     public static void go(){

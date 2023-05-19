@@ -1,7 +1,9 @@
+package basa;
+
 import java.io.*;
 
-public interface MediaItem extends Serializable {
-//TODO написать новые методы и изменить текущий
+public interface MediaItem extends Serializable, Iterable<String> {
+
     int countCharsInElements();
     void output(OutputStream out) throws IOException;
     void write(Writer out) throws IOException;
