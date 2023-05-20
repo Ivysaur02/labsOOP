@@ -33,6 +33,17 @@ public class Cringe { //я не понимаю зачем это нужно эт
         }
 
         @Override
+        public void setTitle(String str) {
+            throw new UnsupportedOperationException("Object is unmodifiable");
+            //а зачем блин если я сам должен с этим разбираться?
+        }
+
+        @Override
+        public String getTitle() {
+            return obj.getTitle();
+        }
+
+        @Override
         public Iterator<String> iterator() {
             return obj.iterator();
         }

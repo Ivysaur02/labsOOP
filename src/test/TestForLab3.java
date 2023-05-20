@@ -2,18 +2,17 @@ package test;
 
 
 import basa.Book;
+import basa.Cringe;
+import basa.MediaItem;
 import basa.Movie;
-import com.sun.source.tree.LambdaExpressionTree;
 import laba3.BookFactory;
 import laba3.Factory;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Iterator;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
 public class TestForLab3 {
 
@@ -58,6 +57,12 @@ public class TestForLab3 {
         Factory factory = new BookFactory();
         Book testBook = (Book) factory.create();
         assertEquals(emphtyBook, testBook);
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void CringeTest(){
+        MediaItem unmodifiableBookDecorator = Cringe.unmodifiable(book);
+        unmodifiableBookDecorator.setTitle("gay");
     }
 
 }
