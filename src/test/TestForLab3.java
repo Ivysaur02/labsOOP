@@ -62,6 +62,7 @@ public class TestForLab3 {
     @Test(expected = UnsupportedOperationException.class)
     public void CringeTest(){
         MediaItem unmodifiableBookDecorator = Cringe.unmodifiable(book);
+        //Book unmodifiableBookDecorator<Book> = Cringe.unmodifiable(book); сразу приводим к книге
         unmodifiableBookDecorator.setTitle("gay");
     }
 
